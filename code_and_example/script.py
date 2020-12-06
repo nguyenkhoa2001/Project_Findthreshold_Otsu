@@ -7,7 +7,7 @@ im = cv2.imread("quarters_dimes_pennies.png", 0)
 [hist, _] = np.histogram(im, bins=256, range=(0, 255)) 
 val_max = 0
 thr = 0
-for t in range(1, 255):
+for t in range(0, 256):
     if ((np.sum(hist[t:]) == 0) or (np.sum(hist[:t]) == 0 )):
          continue
     P1 = np.sum(hist[t:]) / np.sum(hist)
